@@ -1,0 +1,48 @@
+[alias]
+	br = branch
+	bra = branch -a
+	ci = commit
+	cia = commit --amend
+	co = checkout
+	con = config
+	dc = diff --cached
+  del = push origin --delete
+	df = diff -w
+	dfs = diff --stat -w
+  ign = ls-files -o -i --exclude-standard
+	lg = log -p
+	lol = log --graph --decorate --pretty=oneline --abbrev-commit
+	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	ls = ls-files
+	mg = merge
+	pl = pull --rebase
+	st = status
+  wdf = diff -w --color-words
+	fp = fetch --prune
+	psc = !sh -c \"git push --set-upstream origin \\$(git rev-parse --abbrev-ref HEAD)\"
+	psf = !sh -c \"git push --set-upstream --force-with-lease origin \\$(git rev-parse --abbrev-ref HEAD)\"
+	rbm = rebase origin/master
+        dlb =!sh -c \"git branch | grep -v master | grep -v '\\*' | echo xargs -n 1 git branch -D\"
+        dlmb=!sh -c \"git checkout master && git branch --merged origin/master | grep -v '\\*' | xargs -n 1 git branch -D\"
+[diff]
+	mnemonicprefix = true
+[core]
+	autocrlf = input
+[user]
+	name = Sylvain Mougenot
+[rerere]
+	enabled = true
+[mergetool]
+	keepBackup = false
+[branch]
+	autosetuprebase = always
+[help]
+	autocorrect = 1
+[push]
+	default = upstream
+[pull]
+	rebase = true
+[rebase]
+	autostash = true
+[clean]
+	requireForce = false
